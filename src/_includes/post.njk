@@ -1,0 +1,99 @@
+---
+permalink: "{{ permalink }}"
+title: "{{ title }}"
+description: "{{ description }}"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<meta content="{{ title }}" property="og:title" />
+	<meta content="{{ description }}" property="og:description" />
+	<meta content="https://punkroczombi.dev/{{ permalink }}" property="og:url" />
+	<meta content="https://punkroczombi.dev/images/favicon.ico" property="og:image" />
+	<meta content="#EABDE6" data-react-helmet="true" name="theme-color" />
+	<meta content="summary_large_image" name="twitter:card">
+
+	<link href="/styles/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/images/favicon.ico" rel="icon" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <span>{{ title }}</span>
+        </header>
+
+        <div class="small">
+            <nav>
+                <div>Navigation</div>
+                <a href="/index.html">Index</a>
+                <a href="/aboutme.html">About Me</a>
+                <a href="/webring.html">Web Ring</a>
+                <a href="/guestbook.html">Guestbook</a>
+            </nav>
+            <img src="">
+            <nav>
+              <div>Links</div>
+              <a href="https://discordapp.com/users/281186666985684992">My Discord</a>
+              <a href="https://github.com/punkroczombie">My Github</a>
+              <a href="https://buymeacoffee.com/punkroczombi">Buy me a Coffee</a>
+              <a href="monero:872PKoZm7woFiA76ahQiVick4Y8qs7Hhf1eeiTECvtJyH7FqPDgx8mAFLK6Ws29x8kXpQw8tB9eySaM7d9nDcVou6R4GydQ">Donate via XMR</a>
+            </nav>
+            <img src="">
+            <nav id="nextprev">
+                <div>Blogs</div>
+                {% if nextPost.url %}
+                    <a class="next" href="{{ nextPost.url }}">« Next</a> |
+                {% endif %}
+                    <a href="../index.html">Archives</a>
+                {% if prevPost.url %}
+                    | <a class="previous" href="{{ prevPost.url }}">Previous »</a>
+                {% endif %}
+            </nav>
+        </div>
+
+        <section class="half">
+            <h1>root/{{ permalink }} </h1>
+            <h2>{{ title }}</h2>
+
+            {{ content | safe }}
+
+        </section>
+
+    </div>
+
+    <footer>
+        <span>
+          Last Updated: <span id="lastupdate"><script src="/scripts/widgets/neocities/lastupdate.js"></script></span><br />
+          Punkroczombi ©
+          <span id="year">
+            <script>
+              var date = new Date().getFullYear();
+          document.getElementById("year").innerHTML = date;
+            </script>
+          </span>
+        </span>
+    </footer>
+
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <script>
+      let topbutton = document.getElementById("topBtn");
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          topbutton.style.display = "block";
+        } else {
+          topbutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+</body>
+</html>
