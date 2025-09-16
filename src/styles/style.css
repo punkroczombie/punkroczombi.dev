@@ -12,7 +12,7 @@ a:link {
 }
 
 header {
-	background: url('/src/checkerboard.png.png');
+	background: url('/images/checkerboard.png');
 }
 
 * { 
@@ -43,7 +43,7 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 1000;
-    background-image: url(/src/images/overlay.png);
+    background-image: url(/images/overlay.png);
     background-repeat: all;
     background-position: 0px 0px;
     animation-name: Static;
