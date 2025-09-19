@@ -42,25 +42,24 @@ description: Welcome to my page
 </section>
 
 <section class="half">
-    <h2>My other sites:</h2>
+    <h2>My Letterboxd</h2>
+    <div style="max-width: fit-content;margin-left: auto;margin-right: auto;">
+        <div id="letterboxd-embed-wrapper-tc">Loading...</div>
+        <script>
+        fetch('https://lb-embed-content.bokonon.dev?username=punkroczombi')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('letterboxd-embed-wrapper-tc').innerHTML = data;
+        });
+        </script>
+    </div>
+</section>
+
+<section class="half">
+    <h2>My other sites</h2>
     <ul>
         <li><a href="https://thekrew.network/">thekrew.network</a></li>
     </ul>
-</section>
-
-<section class="half">
-    <div id="letterboxd-embed-wrapper-tc">Loading...</div>
-    <script>
-    fetch('https://lb-embed-content.bokonon.dev?username=punkroczombi')
-    .then(response => response.text())
-    .then(data => {
-    document.getElementById('letterboxd-embed-wrapper-tc').innerHTML = data;
-    });
-    </script>
-</section>
-
-<section class="half">
-
 </section>
 
 <section class="full">
