@@ -48,6 +48,21 @@ description: Welcome to my page
     </ul>
 </section>
 
+<section class="half">
+    <div id="letterboxd-embed-wrapper-tc">Loading...</div>
+    <script>
+    fetch('https://lb-embed-content.bokonon.dev?username=punkroczombi')
+    .then(response => response.text())
+    .then(data => {
+    document.getElementById('letterboxd-embed-wrapper-tc').innerHTML = data;
+    });
+    </script>
+</section>
+
+<section class="half">
+
+</section>
+
 <section class="full">
     <div style="max-width: fit-content;margin-left: auto;margin-right: auto;">
         <img src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1758033921/style=5/counter.png" border="0">
