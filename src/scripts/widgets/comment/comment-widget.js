@@ -60,7 +60,7 @@ const s_submitButtonLabel = 'Submit';
 const s_loadingText = 'Loading comments...';
 const s_noCommentsText = 'No comments yet!';
 const s_closedCommentsText = 'Comments are closed temporarily!';
-const s_websiteText = 'Website'; // The links to websites left by users on their comments
+const s_websiteText = ' Website'; // The links to websites left by users on their comments
 const s_replyButtonText = 'Reply'; // The button for replying to someone
 const s_replyingText = 'Replying to'; // The text that displays while the user is typing a reply
 const s_expandRepliesText = 'Show Replies';
@@ -538,5 +538,6 @@ function changePage(dir) {
         if (i >= v_commentMin && i < v_commentMax) {a_commentDivs[i].style.display = 'block'}
     }
 }
+
 
 getComments(); // Run once on page load
